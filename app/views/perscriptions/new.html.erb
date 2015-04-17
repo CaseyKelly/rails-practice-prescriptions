@@ -15,7 +15,7 @@
         <% end %>
         <div class="form-group">
           <%= f.label :medication_id %>
-          <%= f.collection_select :medication_id, Medication.all, :id, :name, {include_blank: false}, {class: "form-control"} %>
+          <%= f.collection_select :medication_id, Medication.all, :id, :name, {include_blank: true}, {class: "form-control"} %>
         </div>
         <div class="form-group">
           <%= f.label :dosage %>
@@ -33,7 +33,7 @@
           <%= f.label :ends_on %>
           <%= f.date_field :ends_on, class: "form-control" %>
         </div>
-    
+
         <div class="form-group">
           <%= f.submit "Create Perscription", class: "btn btn-primary" %>
         </div>

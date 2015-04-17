@@ -13,7 +13,7 @@ class PerscriptionsController < ApplicationController
     if @perscription.save
       redirect_to patient_path(@patient), notice: "Your perscription has been created."
     else
-      redirect_to patient_path(@patient), notice: "It didn't work."
+      render :new
     end
   end
 
