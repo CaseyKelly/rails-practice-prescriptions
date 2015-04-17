@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :perscriptions
   end
 
+  resources :medications
+
 
   get "signin" => "sessions#new", as: :signin
   post "signin" => "sessions#create"
