@@ -3,19 +3,24 @@
 </div>
 
 <div class="page-header">
+  <%= link_to "+ New Perscription", new_patient_perscription_path(@patient), class: "pull-right" %>
   <h2>Prescriptions</h2>
 </div>
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Medication</th>
+      <th>Dosage/Schedule</th>
+      <th>Dates</th>
     </tr>
   </thead>
   <tbody>
-    <!-- @patients.each do |patient| -->
+    <% @perscriptions.each do |perscription| %>
       <tr>
-        <!-- <td>link_to full_name(patient), patient_path(patient)</td> -->
+        <td><%= perscription.medication.name %></td>
+        <td><%= perscription.dosage + ' ' + perscription.schedule %></td>
+        <td><%= perscription.starts_on.strftime('%m/%d/%Y').to_s + ' - ' + perscription.ends_on.strftime('%m/%d/%Y').to_s %></td>
       </tr>
-    <!-- end -->
+    <% end %>
   </tbody>
 </table>
